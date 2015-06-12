@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="me.clantag.giftexchange.MainActivity" >
+
+    <item
+        android:id="@+id/save_state"
+        android:orderInCategory="100"
+        android:title='Save State'/>
+    <item android:id="@+id/load_state" android:title="Load State" android:orderInCategory="200"></item>
+
+</menu>

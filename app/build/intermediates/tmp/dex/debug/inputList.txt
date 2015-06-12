@@ -1,0 +1,3 @@
+/media/hdd/Dev/android-projects/app/build/intermediates/classes/debug
+/media/hdd/Dev/android-projects/app/build/intermediates/pre-dexed/debug/classes-7bd7606a770bbd035466496730f5dfc676571ac4.jar
+/media/hdd/Dev/android-projects/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-ec98ef1d5ead06d7083c1b0d2f6bb9370e77ef98.jar
