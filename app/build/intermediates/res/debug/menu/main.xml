@@ -10,4 +10,4 @@
     <item android:id="@+id/load_state" android:title="Load State" android:orderInCategory="200"></item>
 
 </menu>
-<!-- From: file:/media/hdd/Dev/android-projects/android-giftexchange/app/src/main/res/menu/main.xml -->
+<!-- From: file:/media/hdd/Dev/git_repos/Android-GiftExchange/app/src/main/res/menu/main.xml -->

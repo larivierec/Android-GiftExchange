@@ -6,9 +6,9 @@ import java.util.LinkedList;
 import com.clariviere.dev.giftexchange.model.Person;
 import com.clariviere.dev.giftexchange.model.PersonMapping;
 
-import controller.GenerateController;
-import controller.LoadStateListener;
-import controller.SaveStateListener;
+import com.clariviere.dev.giftexchange.controller.GenerateController;
+import com.clariviere.dev.giftexchange.controller.LoadStateListener;
+import com.clariviere.dev.giftexchange.controller.SaveStateListener;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Dialog;
 import android.content.Context;

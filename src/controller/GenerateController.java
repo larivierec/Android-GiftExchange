@@ -1,4 +1,4 @@
-package controller;
+package com.clariviere.dev.giftexchange.controller;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

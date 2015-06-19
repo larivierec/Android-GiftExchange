@@ -1,4 +1,4 @@
-package controller;
+package com.clariviere.dev.giftexchange.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;

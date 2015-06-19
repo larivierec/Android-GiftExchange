@@ -1,4 +1,4 @@
-package controller;
+package com.clariviere.dev.giftexchange.controller;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -9,7 +9,6 @@ import com.clariviere.dev.giftexchange.model.PersonMapping;
 import android.content.Context;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Toast;
 
 public class GenerateController implements OnClickListener{
 	
