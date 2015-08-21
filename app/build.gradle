@@ -1,24 +1,28 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+
+    }
     compileSdkVersion 19
     buildToolsVersion "21.1.2"
-
     defaultConfig {
         applicationId "com.clariviere.dev.giftexchange"
         minSdkVersion 8
         targetSdkVersion 19
     }
-
     buildTypes {
-        release {
-            minifyEnabled false
+        debug {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+        release {
+            minifyEnabled false
+        }
+    }
+    productFlavors {
     }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:19.1.0'
-    compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.android.support:appcompat-v7:19.0.0'
 }

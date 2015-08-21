@@ -54,7 +54,7 @@ public class PersonMapping implements Serializable{
 		Iterator it = idMapping.entrySet().iterator();
 		while(it.hasNext()){
 			Map.Entry<Integer, Integer> pairs = (Map.Entry<Integer, Integer>)it.next();
-			if(pairs.getKey() == pairs.getValue()){
+			if(pairs.getKey().equals(pairs.getValue())){
 				generateUniqueMaps();
 			}
 		}
@@ -66,7 +66,7 @@ public class PersonMapping implements Serializable{
 		}
 	}
 	
-	public CharSequence getCharSeq(){
+	public String toString(){
 		String temp = "";
 		for(int i = 0; i < personMapping.size() ; i++){
 			temp += "Person: " + personMapping.get(i).getPersonName() + " has picked: " + personMapping.get(idMapping.get(i)).getPersonName() + "\n";
