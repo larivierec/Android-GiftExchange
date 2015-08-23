@@ -41,7 +41,7 @@ public class LoadStateListener extends AbstractState{
 		}
 	}
 
-	public LinkedList<Person> getListOfPeeps() {
+	public LinkedList<Person> getListOfPeople() {
 		return listOfPeeps;
 	}
 

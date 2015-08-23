@@ -60,6 +60,7 @@ public class MainActivity extends ActionBarActivity {
 				Button btnAddPersonBtn = (Button)personAddPopup.findViewById(R.id.dialogBtnAdd);
 				
 				EditText personNameField = (EditText)personAddPopup.findViewById(R.id.txtPersonName);
+                EditText personEmailField = (EditText)personAddPopup.findViewById(R.id.txtPersonEmail);
 				personNameField.setOnFocusChangeListener(new OnFocusChangeListener() {
 					
 					@Override
@@ -103,7 +104,6 @@ public class MainActivity extends ActionBarActivity {
 					labelForName.setText(p.getPersonPicked().getPersonName());
 					
 					btnDismiss.setOnClickListener(new OnClickListener() {
-						
 						@Override
 						public void onClick(View v) {
 							viewPersonPopup.dismiss();
@@ -115,10 +115,9 @@ public class MainActivity extends ActionBarActivity {
 				}
 			}
 		}); 
-        
-        
+
         final Button buttonGenerate = (Button) findViewById(R.id.btnGenerateList);
-        buttonGenerate.setOnClickListener(new GenerateController(this, listPeople,this.finalMap,this.listToReturn));
+        buttonGenerate.setOnClickListener(new GenerateController(this, listPeople, this.finalMap, this.listToReturn));
         
     }
 
@@ -133,11 +132,11 @@ public class MainActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.save_state) {
-            new SaveStateListener(this.finalMap, this.listToReturn,context);
+            new SaveStateListener(this.finalMap, this.listToReturn, context);
         }
         else if(id == R.id.load_state){
-        	LoadStateListener load = new LoadStateListener(this.finalMap, this.listToReturn,context);
-        	this.listToReturn = load.getListOfPeeps();
+        	LoadStateListener load = new LoadStateListener(this.finalMap, this.listToReturn, context);
+        	this.listToReturn = load.getListOfPeople();
         	this.finalMap = load.getPersonMapping();
         	
         	for(Person p : listToReturn){

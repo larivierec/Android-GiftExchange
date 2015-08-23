@@ -4,15 +4,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-     <Button
-         android:id="@+id/dialogBtnAdd"
-         android:layout_width="133dp"
-         android:layout_height="wrap_content"
-         android:layout_alignParentTop="true"
-         android:layout_centerHorizontal="true"
-         android:layout_marginTop="123dp"
-         android:text=" Add Person" />
-
      <EditText
          android:id="@+id/txtPersonName"
          android:layout_width="wrap_content"
@@ -29,8 +20,32 @@
          android:id="@+id/lblPerson"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:layout_alignBottom="@+id/txtPersonName"
-         android:layout_alignParentLeft="true"
-         android:text="Person Name:" />
- 
+         android:text="Person Name:"
+         android:layout_alignBaseline="@+id/txtPersonName" android:layout_alignBottom="@+id/txtPersonName"
+         android:layout_toLeftOf="@+id/dialogBtnAdd" android:layout_toStartOf="@+id/dialogBtnAdd"/>
+
+
+    <TextView android:id="@+id/lblPersonEmail"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Person Email:"
+              android:layout_marginTop="30dp" android:layout_below="@+id/txtPersonName"
+              android:layout_alignLeft="@+id/lblPerson" android:layout_alignStart="@+id/lblPerson"/>
+
+
+    <EditText android:id="@+id/txtPersonEmail" android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:ems="10"
+              android:inputType="textCapWords"
+              android:lines="1"
+              android:maxLines="1"
+              android:layout_alignBaseline="@+id/lblPersonEmail" android:layout_alignBottom="@+id/lblPersonEmail"
+              android:layout_alignLeft="@+id/txtPersonName" android:layout_alignStart="@+id/txtPersonName"/>
+
+    <Button
+            android:id="@+id/dialogBtnAdd"
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            android:text=" Add Person" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>

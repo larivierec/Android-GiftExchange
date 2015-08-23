@@ -7,26 +7,20 @@ public class Person implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 2L;
-	
-	
+
 	private int id;
 	private String personName;
 	private String email;
 	
 	private Person personPicked;
 	
-	private Person(){}
-	
-	public Person(String name){
-		this.personName = name;
-	}
-	
 	public Person(int id, String name){
 		this.id = id;
 		this.personName = name;
 	}
 	
-	public Person(String name,String email){
+	public Person(int id, String name, String email){
+		this.id = id;
 		this.personName = name;
 		this.email = email;
 	}
@@ -45,5 +39,13 @@ public class Person implements Serializable{
 	
 	public String getPersonName(){
 		return this.personName;
+	}
+
+	public void setPersonEmail(String email){
+		this.email = email;
+	}
+
+	public String getEmail(){
+		return this.email;
 	}
 }
