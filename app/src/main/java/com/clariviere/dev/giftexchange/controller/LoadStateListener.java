@@ -42,11 +42,11 @@ public class LoadStateListener extends AbstractState{
 	}
 
 	public LinkedList<Person> getListOfPeople() {
-		return listOfPeeps;
+		return listOfPeople;
 	}
 
 	public void setListOfPeeps(LinkedList<Person> listOfPeeps) {
-		this.listOfPeeps = listOfPeeps;
+		this.listOfPeople = listOfPeeps;
 	}
 
 	public PersonMapping getPersonMapping() {

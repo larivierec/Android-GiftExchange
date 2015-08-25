@@ -11,11 +11,11 @@ public abstract class AbstractState{
     protected Context con;
     protected String textFile = "GiftExchangeSaveState.st";
     protected PersonMapping personMapping;
-    protected LinkedList<Person> listOfPeeps;
+    protected LinkedList<Person> listOfPeople;
 
     public AbstractState(PersonMapping personMapping, LinkedList<Person> p, Context context) {
         this.personMapping = personMapping;
-        this.listOfPeeps = p;
+        this.listOfPeople = p;
         textFile = "GiftExchangeSaveState.st";
         this.con = context;
     }

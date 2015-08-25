@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
-
 android {
     signingConfigs {
 
     }
-    compileSdkVersion 19
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 22
+    buildToolsVersion '23.0.0'
     defaultConfig {
         applicationId "com.clariviere.dev.giftexchange"
-        minSdkVersion 8
-        targetSdkVersion 19
+        minSdkVersion 9
+        targetSdkVersion 22
+        multiDexEnabled = true
     }
     buildTypes {
         debug {
@@ -24,5 +24,9 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:19.0.0'
+    compile 'com.google.android.gms:play-services:7.8.0'
+    compile 'com.google.api-client:google-api-client:1.20.0'
+    compile 'com.google.api-client:google-api-client-android:1.20.0'
+    compile 'com.google.api-client:google-api-client-gson:1.20.0'
+    compile 'com.google.apis:google-api-services-gmail:v1-rev29-1.20.0'
 }

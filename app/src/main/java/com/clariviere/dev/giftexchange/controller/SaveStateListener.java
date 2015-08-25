@@ -32,7 +32,7 @@ public class SaveStateListener extends AbstractState {
 			ObjectOutput s = new ObjectOutputStream(fileOutputStream);
 
 			s.writeObject(personMapping);
-			s.writeObject(listOfPeeps);
+			s.writeObject(listOfPeople);
 			s.flush();
 			s.close();
 

@@ -8,13 +8,8 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Random;
 
-import com.clariviere.dev.giftexchange.model.Person;
-
 public class PersonMapping implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private LinkedList<Person> localMappedList = new LinkedList<Person>();
@@ -32,8 +27,7 @@ public class PersonMapping implements Serializable{
 		HashSet<Integer> randomNumbers = new HashSet<Integer>(localMappedList.size() - 1);
 		idMapping = new HashMap<Integer,Integer>();
 		personMapping = new HashMap<Integer, Person>();
-		
-		int tempNumber = seededObj.nextInt(localMappedList.size());
+		int tempNumber = seededObj.nextInt();
 		
 		
 		for(int i = 0; i < localMappedList.size() ; i++){
@@ -52,6 +46,7 @@ public class PersonMapping implements Serializable{
 	
 	public void verify(){
 		Iterator it = idMapping.entrySet().iterator();
+
 		while(it.hasNext()){
 			Map.Entry<Integer, Integer> pairs = (Map.Entry<Integer, Integer>)it.next();
 			if(pairs.getKey().equals(pairs.getValue())){

@@ -1,6 +1,7 @@
 package com.clariviere.dev.giftexchange;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 
 import com.clariviere.dev.giftexchange.model.Person;
@@ -9,9 +10,20 @@ import com.clariviere.dev.giftexchange.model.PersonMapping;
 import com.clariviere.dev.giftexchange.controller.GenerateController;
 import com.clariviere.dev.giftexchange.controller.LoadStateListener;
 import com.clariviere.dev.giftexchange.controller.SaveStateListener;
-import android.support.v7.app.ActionBarActivity;
+
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.client.util.ExponentialBackOff;
+import com.google.api.services.gmail.Gmail;
+import com.google.api.services.gmail.GmailScopes;
+
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,22 +41,45 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
-	ArrayList<String> listPeople = new ArrayList<String>();
-	LinkedList<Person> listToReturn = new LinkedList<Person>();
-	PersonMapping finalMap = new PersonMapping(listToReturn);
-	
-	ArrayAdapter<String> adapter;
+    private ArrayList<String> listPeople = new ArrayList<String>();
+    private LinkedList<Person> listToReturn = new LinkedList<Person>();
+    private PersonMapping finalMap = new PersonMapping(listToReturn);
+
+    private ArrayAdapter<String> adapter;
 	final Context context = this;
-	ListView peopleList;
+    private ListView peopleList;
+
+
+    //Used for GMail service
+
+    private final int REQUEST_ACCOUNT = 1000;
+    private final int REQUEST_AUTH = 1001;
+    private final int REQUEST_GG_SERVICES = 1002;
+
+    private GoogleAccountCredential mCredential;
+    private Gmail mService;
+    private final HttpTransport transport = AndroidHttp.newCompatibleTransport();
+    private final JsonFactory jsonFactory = GsonFactory.getDefaultInstance();
+    private final String mAccName = "";
+    private final String[] mGmailScopes = {GmailScopes.GMAIL_LABELS};
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences settings = getPreferences(Context.MODE_PRIVATE);
+        mCredential = GoogleAccountCredential.usingOAuth2(
+                getApplicationContext(), Arrays.asList(mGmailScopes))
+                .setBackOff(new ExponentialBackOff())
+                .setSelectedAccountName(settings.getString(mAccName,null));
+
+        mService = new Gmail.Builder(transport, jsonFactory, mCredential)
+                .setApplicationName("Gift Exchange - Email Service")
+                .build();
+
         setContentView(R.layout.activity_main);
-        
-        
         peopleList = (ListView)findViewById(R.id.listOfPeople);
         adapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, listPeople);
         peopleList.setAdapter(adapter);
@@ -92,17 +127,17 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				if(listToReturn.size() != 0 || listToReturn != null){
+				if(listToReturn.size() != 0){
 					final Dialog viewPersonPopup = new Dialog(context);
 					viewPersonPopup.setContentView(R.layout.pickedperson_dialog);
 					viewPersonPopup.setTitle("You chose...");
 					
 					Button btnDismiss = (Button) viewPersonPopup.findViewById(R.id.btnDismiss);
 					TextView labelForName = (TextView) viewPersonPopup.findViewById(R.id.lblPickedPerson);
-					
-					Person p = listToReturn.get((int) id);
-					labelForName.setText(p.getPersonPicked().getPersonName());
-					
+                    if(listToReturn != null) {
+                        Person p = listToReturn.get((int) id);
+                        labelForName.setText(p.getPersonPicked().getPersonName());
+                    }
 					btnDismiss.setOnClickListener(new OnClickListener() {
 						@Override
 						public void onClick(View v) {

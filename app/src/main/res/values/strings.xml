@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="load_state_str">Load State</string>
     <string name="save_state_str">Save State</string>
+    <string name="add_person">Add Person</string>
 
 </resources>
