@@ -11,9 +11,13 @@ public class Person implements Serializable{
 	private int id;
 	private String personName;
 	private String email;
-	
 	private Person personPicked;
-	
+
+    public Person(String name, String email){
+        this.personName = name;
+        this.email = email;
+    }
+
 	public Person(int id, String name){
 		this.id = id;
 		this.personName = name;
@@ -47,5 +51,13 @@ public class Person implements Serializable{
 
 	public String getEmail(){
 		return this.email;
+	}
+
+	public void setPersonID(int personID){
+		this.id = personID;
+	}
+
+	public Integer getPersonID(){
+		return this.id;
 	}
 }

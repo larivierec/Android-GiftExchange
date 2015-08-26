@@ -3,8 +3,9 @@ android {
     signingConfigs {
 
     }
+
     compileSdkVersion 22
-    buildToolsVersion '23.0.0'
+    buildToolsVersion '22.0.1'
     defaultConfig {
         applicationId "com.clariviere.dev.giftexchange"
         minSdkVersion 9
@@ -19,6 +20,15 @@ android {
             minifyEnabled false
         }
     }
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "4g"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+    }
+
     productFlavors {
     }
 }
@@ -28,5 +38,12 @@ dependencies {
     compile 'com.google.api-client:google-api-client:1.20.0'
     compile 'com.google.api-client:google-api-client-android:1.20.0'
     compile 'com.google.api-client:google-api-client-gson:1.20.0'
-    compile 'com.google.apis:google-api-services-gmail:v1-rev29-1.20.0'
+    compile 'com.google.apis:google-api-services-gmail:v1-rev32-1.20.0'
+    compile 'com.google.android.gms:play-services-ads:7.8.0'
+    compile 'com.google.android.gms:play-services-gcm:7.8.0'
+    compile 'com.google.android.gms:play-services-identity:7.8.0'
+    compile 'com.android.support:appcompat-v7:22.0.1'
+    compile files('libs/mail.jar')
+    compile files('libs/additionnal.jar')
+    compile files('libs/activation.jar')
 }

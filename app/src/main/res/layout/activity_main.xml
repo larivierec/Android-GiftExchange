@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.clariviere.dev.giftexchange.MainActivity" >
+    tools:context=".activities.MainActivity" >
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -45,7 +45,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Send Email"
-                    android:id="@+id/send_email"/>
+                    android:id="@+id/btn_sendEmail"/>
         </LinearLayout>
 
     </LinearLayout>
