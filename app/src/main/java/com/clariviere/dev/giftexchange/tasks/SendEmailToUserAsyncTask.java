@@ -3,7 +3,7 @@ package com.clariviere.dev.giftexchange.tasks;
 import android.os.AsyncTask;
 
 import com.clariviere.dev.giftexchange.activities.MainActivity;
-import com.clariviere.dev.giftexchange.model.GmailUtil;
+import com.clariviere.dev.giftexchange.model.Email;
 import com.clariviere.dev.giftexchange.model.Person;
 import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
 import com.google.api.services.gmail.Gmail;
@@ -26,16 +26,17 @@ public class SendEmailToUserAsyncTask extends AsyncTask<Void, Void, Void>{
     @Override
     protected Void doInBackground(Void... params) {
         try{
-            GmailUtil.sendMessage(mService, "me", GmailUtil.
+            /*GmailUtil.sendMessage(mService, "me", GmailUtil.
                     createEmail(mPerson.getPersonPicked().getEmail(),
                             mPerson.getEmail(),
                             "Chosen person",
-                            mPerson.getPersonPicked().getPersonName()));
-        }catch(UserRecoverableAuthIOException e){
+                            mPerson.getPersonPicked().getPersonName()));*/
+            Email localEmail = new Email(mPerson.getEmail(), mPerson.getPersonPicked().getEmail(),
+                    "Chosen Person", mPerson.getPersonPicked().getPersonName());
+            GmailUtil.sendMessage(mService, "me", localEmail);
+        } catch(UserRecoverableAuthIOException e){
             e.printStackTrace();
             mActivity.startActivityForResult(e.getIntent(), 1001);
-        } catch (MessagingException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

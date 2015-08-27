@@ -2,18 +2,284 @@
 <items version="2" >
 
     <item
-        jar="/media/hdd/Dev/android-projects/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
+        jar="C:\Users\Chris\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.1\2e66da15851f9f5b5079228f856c2f090ba98c38\gson-2.1.jar"
         jumboMode="false"
-        revision="21.1.2"
-        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
-        <dex dex="/media/hdd/Dev/android-projects/app/build/intermediates/pre-dexed/debug/classes-7bd7606a770bbd035466496730f5dfc676571ac4.jar" />
+        revision="23.0.0"
+        sha1="2e66da15851f9f5b5079228f856c2f090ba98c38">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\gson-2.1-f713910a2bf997c422b95edab5725231846ad216.jar" />
     </item>
     <item
-        jar="/media/hdd/Downloads/Linux/android/android-sdk-linux/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.8.0\classes.jar"
         jumboMode="false"
-        revision="21.1.2"
-        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
-        <dex dex="/media/hdd/Dev/android-projects/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-ec98ef1d5ead06d7083c1b0d2f6bb9370e77ef98.jar" />
+        revision="23.0.0"
+        sha1="c5cafb324568d954780abb858c25db7ce675ab3c">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-15d2a1b4fac188ab383c0c8b5c9c7023dd05f5e5.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-e540993351ceae6325dd9c330a2164a42d8f9bc9.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="77a9dcb5f8b1dba36aacaa9c150eb0942dbea158">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-e5e638437308dd32057d3fa79f3bcf2a170a869f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Chris\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-gmail\v1-rev29-1.20.0\f6ee0afa04fde8a0d1bf133f3e61499d85b98dd7\google-api-services-gmail-v1-rev29-1.20.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="f6ee0afa04fde8a0d1bf133f3e61499d85b98dd7">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\google-api-services-gmail-v1-rev29-1.20.0-7f519ac4f89f87bd608a3063c224c1d4165691aa.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="166e458ee3b5fb5fcff0f936df3f3a788e6c54f3">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-f80dd7821534a89a0b834ff16da391d747b42f25.jar" />
+    </item>
+    <item
+        jar="D:\java_libraries\AndroidSDKs\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-f6318621e65298c37fb4608afc48e6af93fba357.jar" />
+    </item>
+    <item
+        jar="C:\Users\Chris\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client\1.20.0\d3e66209ae9e749b2d6833761e7885f60f285564\google-api-client-1.20.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="d3e66209ae9e749b2d6833761e7885f60f285564">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\google-api-client-1.20.0-36f1104c32d3ec42ad36af0bf0e70707c1db2256.jar" />
+    </item>
+    <item
+        jar="C:\Users\Chris\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-jackson2\1.20.0\2408070b2abec043624d35b35e30450f1b663858\google-http-client-jackson2-1.20.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="2408070b2abec043624d35b35e30450f1b663858">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\google-http-client-jackson2-1.20.0-f3159c9bb57210c2f4c8744a34e7ff6bd3d76672.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="42a1ee578b62fd1bd28b3307a679dc9ba0791587">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-8eab91f2543ded2c624f09d4770262fbcf81d732.jar" />
+    </item>
+    <item
+        jar="C:\Users\Chris\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client\1.20.0\93d82db2bca534960253f43424b2ba9d7638b4d2\google-http-client-1.20.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="93d82db2bca534960253f43424b2ba9d7638b4d2">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\google-http-client-1.20.0-67ccd9056d6215b377850962840301e480c0cc32.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="e23ea11124bb700eeddd4ab7aa848c615f493850">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-7d3c074fbbc6c1d58a235f52f7239bfc2dc003a0.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="1ff30fa49c07a08c3035d7218a3efebf5680d522">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-8d5462f016d9418ff4cd6c1b47728660aa77f51e.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="0124ce31248c0e8acfa2b28283c6d1a4d76e73d2">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-d28eb177e483a19710c7a8b42d437479d016b3b7.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-da7afdc72df07f8a65771616175716705a2f6704.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="2e24e5f1b11170163028277de63f709e42525db4">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-e2308fa6a79b4f3bc85977bbb39ea814511fcf9f.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="edea92852b40eee716e910af8dad9eeaa58fb0e1">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-c3404d4f5eb70c351a5f474c4c5593a2cda0dcb4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Chris\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-android\1.20.0\313dc99a7963523871495897ca11aa8472b3c6fd\google-http-client-android-1.20.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="313dc99a7963523871495897ca11aa8472b3c6fd">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\google-http-client-android-1.20.0-f696aedf07d6e3486cd59d8de527c8c4254dfb2c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Chris\.gradle\caches\modules-2\files-2.1\com.google.guava\guava-jdk5\13.0\381ae6c8add7c98e9bcddb1e0b898400cd6fc3f7\guava-jdk5-13.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="381ae6c8add7c98e9bcddb1e0b898400cd6fc3f7">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\guava-jdk5-13.0-83ffc659844f7517826659c79bf2f658b63a8234.jar" />
+    </item>
+    <item
+        jar="C:\Users\Chris\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client\1.20.0\1d086ac5756475ddf451af2e2df6e288d18608ca\google-oauth-client-1.20.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="1d086ac5756475ddf451af2e2df6e288d18608ca">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\google-oauth-client-1.20.0-07db5b4cab05f9baa3b54a58e662b65bc5a6fabe.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-655359f4c19c63250902ab9c6f39c1294815bbe3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Chris\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client-android\1.20.0\5673179575c32b69a474334255c3044adf18d40\google-api-client-android-1.20.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="05673179575c32b69a474334255c3044adf18d40">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\google-api-client-android-1.20.0-9702e1eb8b02b30faad83faf9af5b87c15f9495f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Chris\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-gson\1.20.0\9204765f39000f6109c927ac66c7963bf9c7df19\google-http-client-gson-1.20.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="9204765f39000f6109c927ac66c7963bf9c7df19">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\google-http-client-gson-1.20.0-d9fbf5f42c417e09e97781e838ceee6e9d8e8756.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="2491ae1b2a848af1f4f0c795f3117c1bd6a1989f">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-821182b186da819b53e88d3573e2e0642e1bc11f.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="cb6fab7a71fa9ec1f483d44c5fca65ab469d8aca">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-61ebfebb2e699cf0bb4fe91e70efe4a0ecc33d60.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-68ea3d1b8c7df8a778f72a3b8ac2798bc0a06622.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-6dc67cf065f542dc51a4705f219514a89efca8e9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Chris\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client-gson\1.20.0\ace1924800ca8c256f6a3f63e72ee13e1b458d36\google-api-client-gson-1.20.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="ace1924800ca8c256f6a3f63e72ee13e1b458d36">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\google-api-client-gson-1.20.0-e17074dfae3bc25539c70468208695fba803dd68.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="6e85edfc9b5346d216e50ccef1f8e825504144a3">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-509fcf7cf6591eb6c62cba96bd9e035fb05aa0a4.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="c756d14e99d39471e99013a1e8fd2f3813ed42bf">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-920706103593c2120a1394e9a8fb913d9851ebda.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="d11330ea68c0d964d30d5caed1f27e6b1488b189">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-488537b713eb34fabf3c64d2101b4e218a829b4a.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="c2ac04c5b232f6f0658ee4f1c13be09cd76406e2">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-097b7e7b197ecb23d9dde6885c9abf0de3dd83a8.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-d8c09b2dc772e1977f65aa8463fe9c3c531eeaec.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="130b32ed466fa0f63efd4c7d6250ccd2ed506790">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-2f457a20a024e45054766c3d8a9673e99ecd3679.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="98137c4d12c50923f5809852b1ef4d1c4e162081">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-fba64030b5e3487eac8992f78f4a2aa33cc8ff5f.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="4a135d56554069e5d0ff80e3220e887e57146ee5">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-7bb1f433495098a83d90e953ed37bebcf1cea0f8.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="adebe28e0c0c05d34a3bfd76f3275bf4d8ff87b6">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-5de6d4ebc41df6ef8d44c21714dff50d0611c508.jar" />
+    </item>
+    <item
+        jar="M:\gitStuff\Android-GiftExchange\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\7.8.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="b99f0b78bbcb76b915bc6529a83b65d4d46990dd">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\classes-44a1fd229e5562531a3af2f57a8b615fa5fd1147.jar" />
+    </item>
+    <item
+        jar="C:\Users\Chris\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.1.3\f6c3aed1cdfa21b5c1737c915186ea93a95a58bd\jackson-core-2.1.3.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\jackson-core-2.1.3-5cafef0af9a61bbd9b6879f13e4c0c97fed63b6f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Chris\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\1.3.9\40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf\jsr305-1.3.9.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="M:\gitStuff\Android-GiftExchange\app\build\intermediates\pre-dexed\debug\jsr305-1.3.9-57fafdd3830382faacdedeefc397acb6575e27e6.jar" />
     </item>
 
 </items>

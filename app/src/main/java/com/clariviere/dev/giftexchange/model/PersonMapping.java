@@ -12,10 +12,10 @@ public class PersonMapping implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
-	private LinkedList<Person> localMappedList = new LinkedList<Person>();
+	private LinkedList<Person> localMappedList = new LinkedList<>();
 	
-	private Map<Integer,Person> personMapping = new HashMap<Integer, Person>();
-	private Map<Integer,Integer> idMapping = new HashMap<Integer,Integer>();
+	private Map<Integer,Person> personMapping = new HashMap<>();
+	private Map<Integer,Integer> idMapping = new HashMap<>();
 
 	private Random seededObj = new Random();
 	
@@ -25,8 +25,8 @@ public class PersonMapping implements Serializable{
 	
 	public void generateUniqueMaps(){	
 		HashSet<Integer> randomNumbers = new HashSet<Integer>(localMappedList.size() - 1);
-		idMapping = new HashMap<Integer,Integer>();
-		personMapping = new HashMap<Integer, Person>();
+		idMapping = new HashMap<>();
+		personMapping = new HashMap<>();
 		int tempNumber = seededObj.nextInt();
 		
 		

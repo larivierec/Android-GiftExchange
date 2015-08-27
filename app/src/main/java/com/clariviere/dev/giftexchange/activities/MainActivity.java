@@ -46,7 +46,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private ListView peopleList;
     private ArrayList<String> peopleListViewData = new ArrayList<>();
@@ -198,6 +198,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void selectAccount(){
         startActivityForResult(mCredential.newChooseAccountIntent(), REQUEST_ACCOUNT);
+    }
+
+    private void requestAuthorization(){
+
     }
 
     @Override

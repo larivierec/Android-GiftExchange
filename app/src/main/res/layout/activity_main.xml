@@ -18,35 +18,49 @@
         android:layout_alignParentTop="true"
         android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/btnAddP"
-            android:layout_width="wrap_content"
-            android:layout_height="38dp"
-            android:text="Add" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
-        <ListView
-            android:id="@+id/listOfPeople"
-            android:layout_width="match_parent"
-            android:layout_height="388dp"
-                >
-        </ListView>
+            <Button
+                android:id="@+id/btnAddP"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Add"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
 
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" android:gravity="fill_horizontal">
+            <ListView
+                android:id="@+id/listOfPeople"
+                android:layout_width="match_parent"
+                android:layout_height="388dp"
+                android:layout_below="@+id/btnAddP"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignWithParentIfMissing="false">
+            </ListView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
             <Button
                 android:id="@+id/btnGenerateList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick=""
-                android:text="Generate List" />
+                android:text="Generate List"
+                android:layout_gravity="left"
+                android:layout_alignParentLeft="true" />
+
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Send Email"
-                    android:id="@+id/btn_sendEmail"/>
-        </LinearLayout>
+                    android:id="@+id/btn_sendEmail"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
 
     </LinearLayout>
 

@@ -1,7 +1,6 @@
 package com.clariviere.dev.giftexchange.model;
 
 import com.google.api.client.repackaged.org.apache.commons.codec.binary.Base64;
-import com.google.api.services.gmail.Gmail;
 import com.google.api.services.gmail.model.Draft;
 
 import java.io.ByteArrayOutputStream;
@@ -25,7 +24,7 @@ public class Email {
     private Session mSession = Session.getDefaultInstance(mProps,null);
 
     private MimeMessage mMimeMessage;
-    private Draft       mDraft;
+    private Message mMessage;
 
     public Email(String to, String from, String subject, String text){
         mTo = to;
@@ -34,7 +33,7 @@ public class Email {
         mText = text;
         try{
             createEmail();
-            createDraft();
+            createMessage();
         }catch(Exception messageEx){
             messageEx.printStackTrace();
         }
@@ -48,22 +47,20 @@ public class Email {
         mMimeMessage.setText(mText);
     }
 
-    public void createDraft() throws MessagingException, IOException{
+    public void createMessage() throws MessagingException, IOException{
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         mMimeMessage.writeTo(bytes);
         String encodedEmail = Base64.encodeBase64URLSafeString(bytes.toByteArray());
         Message message = new Message();
         message.setRaw(encodedEmail);
-
-        mDraft = new Draft();
-        mDraft.setMessage(message);
+        mMessage = message;
     }
 
     public String getFrom(){
         return mFrom;
     }
 
-    public Draft getDraft(){
-        return mDraft;
+    public Message getMessage(){
+        return mMessage;
     }
 }

@@ -2,8 +2,10 @@ package com.clariviere.dev.giftexchange.controller;
 
 
 import android.view.View;
+import android.widget.Toast;
 
 import com.clariviere.dev.giftexchange.activities.MainActivity;
+import com.clariviere.dev.giftexchange.model.Email;
 import com.clariviere.dev.giftexchange.model.Person;
 import com.clariviere.dev.giftexchange.tasks.SendEmailToUserAsyncTask;
 import com.google.api.services.gmail.Gmail;
@@ -28,6 +30,6 @@ public class SendEmailController implements View.OnClickListener{
             if(e.getPersonPicked().getEmail() != null)
                 new SendEmailToUserAsyncTask(mActivity, mService, e).execute();
         }
-
+        Toast.makeText(mActivity, "Emails have been sent.", Toast.LENGTH_SHORT).show();
     }
 }
