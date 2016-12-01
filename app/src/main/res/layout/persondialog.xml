@@ -32,7 +32,7 @@
     <TextView android:id="@+id/lblPersonEmail"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="Person Email:"
+              android:text="Person Address:"
               android:layout_marginTop="37dp"
             android:layout_below="@+id/lblPerson"
             android:layout_alignLeft="@+id/lblPerson"
@@ -49,7 +49,8 @@
         android:layout_alignStart="@+id/dialogBtnAdd"
         android:layout_marginLeft="27dp"
         android:layout_marginStart="27dp"
-        android:inputType="text" />
+        android:inputType="text"
+        android:phoneNumber="false" />
 
     <Button
             android:id="@+id/dialogBtnAdd"
@@ -59,5 +60,14 @@
         android:layout_below="@+id/txtPersonEmail"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp" />
+
+    <TextView
+        android:text="You can use either an email address or an SMS number."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/lblHelp"
+        android:layout_below="@+id/lblPersonEmail"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

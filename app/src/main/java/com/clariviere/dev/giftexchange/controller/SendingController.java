@@ -32,7 +32,7 @@ public class SendingController implements View.OnClickListener {
                     new SendEmailToUserAsyncTask(mActivity, mService, wPerson).execute();
                 }
                 else if(Person.CommunicationMedium.eSMS == wPerson.getPersonMedium()){
-                    new SendSmsToUserAsyncTask(mActivity, wPerson).execute();
+                    new SendSmsToUserAsyncTask(wPerson).execute();
                 }
 
             }

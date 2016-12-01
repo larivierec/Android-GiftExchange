@@ -57,7 +57,7 @@
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Send Email"
+                    android:text="Send List"
                     android:id="@+id/btn_sendEmail"
                 android:layout_alignParentRight="true" />
         </RelativeLayout>

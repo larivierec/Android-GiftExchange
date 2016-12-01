@@ -10,12 +10,10 @@ import com.clariviere.dev.giftexchange.model.Person;
 import com.clariviere.dev.giftexchange.model.SMSModel;
 
 public class SendSmsToUserAsyncTask extends AsyncTask<Void, Void, Void>{
-    private MainActivity mActivity;
     private Person       mPerson;
     private SmsManager   mSmsManager;
 
-    public SendSmsToUserAsyncTask(MainActivity activity, Person e){
-        this.mActivity = activity;
+    public SendSmsToUserAsyncTask(Person e){
         this.mPerson = e;
         mSmsManager = SmsManager.getDefault();
     }
