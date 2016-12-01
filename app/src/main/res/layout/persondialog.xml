@@ -42,14 +42,14 @@
     <EditText android:id="@+id/txtPersonEmail" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="8"
-        android:inputType="textCapWords"
         android:lines="1"
         android:maxLines="1"
         android:layout_alignBottom="@+id/lblPersonEmail"
         android:layout_alignLeft="@+id/dialogBtnAdd"
         android:layout_alignStart="@+id/dialogBtnAdd"
         android:layout_marginLeft="27dp"
-        android:layout_marginStart="27dp" />
+        android:layout_marginStart="27dp"
+        android:inputType="text" />
 
     <Button
             android:id="@+id/dialogBtnAdd"

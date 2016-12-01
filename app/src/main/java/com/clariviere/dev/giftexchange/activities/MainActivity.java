@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 import com.clariviere.dev.giftexchange.R;
-import com.clariviere.dev.giftexchange.controller.SendEmailController;
+import com.clariviere.dev.giftexchange.controller.SendingController;
 import com.clariviere.dev.giftexchange.model.Person;
 import com.clariviere.dev.giftexchange.model.PersonMapping;
 
@@ -29,7 +29,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -56,10 +55,7 @@ public class MainActivity extends Activity {
     private LinkedList<Person> listToReturn = new LinkedList<>();
     private PersonMapping finalMap = new PersonMapping(listToReturn);
 
-
 	private final Context context = this;
-
-
 
     //Used for GMail service
 
@@ -121,16 +117,16 @@ public class MainActivity extends Activity {
 				
 				btnAddPersonBtn.setOnClickListener(new OnClickListener() {
 					EditText personNameField = (EditText)personAddPopup.findViewById(R.id.txtPersonName);
-                    EditText personEmailField = (EditText)personAddPopup.findViewById(R.id.txtPersonEmail);
+                    EditText personMediumField = (EditText)personAddPopup.findViewById(R.id.txtPersonEmail);
 					@Override
 					public void onClick(View v) {
-						if(personNameField.getText().toString().trim().length() != 0){
-                            Person p = new Person(personNameField.getText().toString(),
-                                    personEmailField.getText().toString().toLowerCase());
-							peopleListViewData.add(p.getPersonName());
+                        Person p = new Person(personNameField.getText().toString(),
+                                personMediumField.getText().toString().toLowerCase());
+						if(p.getPersonName().trim().length() != 0){
+                            peopleListViewData.add(p.getPersonName());
                             listOfPeople.add(p);
-							peopleListViewAdapter.notifyDataSetChanged();
-							personAddPopup.dismiss();
+                            peopleListViewAdapter.notifyDataSetChanged();
+                            personAddPopup.dismiss();
 						}
 					}
 				});
@@ -168,11 +164,13 @@ public class MainActivity extends Activity {
             }
         });
 
+
+
         final Button buttonGenerate = (Button) findViewById(R.id.btnGenerateList);
         buttonGenerate.setOnClickListener(new GenerateController(this, listOfPeople, this.finalMap, this.listToReturn));
 
-        final Button buttonSendEmail = (Button) findViewById(R.id.btn_sendEmail);
-        buttonSendEmail.setOnClickListener(new SendEmailController(this, listToReturn, mService));
+        final Button buttonSendMedium = (Button) findViewById(R.id.btn_sendEmail);
+        buttonSendMedium.setOnClickListener(new SendingController(this, listToReturn, mService));
     }
 
     @Override
@@ -198,10 +196,6 @@ public class MainActivity extends Activity {
 
     private void selectAccount(){
         startActivityForResult(mCredential.newChooseAccountIntent(), REQUEST_ACCOUNT);
-    }
-
-    private void requestAuthorization(){
-
     }
 
     @Override

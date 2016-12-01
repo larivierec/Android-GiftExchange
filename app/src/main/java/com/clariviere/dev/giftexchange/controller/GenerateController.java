@@ -33,7 +33,6 @@ public class GenerateController implements OnClickListener{
                 peopleToReturn.add(p);
                 i++;
             }
-			
 			finalMap = new PersonMapping(peopleToReturn);
 			finalMap.generateUniqueMaps();
 			finalMap.mapUsers();

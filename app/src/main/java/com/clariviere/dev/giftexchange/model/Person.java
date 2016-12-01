@@ -10,12 +10,20 @@ public class Person implements Serializable{
 
 	private int id;
 	private String personName;
-	private String email;
+	private String communicationAddress;
 	private Person personPicked;
 
-    public Person(String name, String email){
+	public enum CommunicationMedium{
+		eEmail,
+		eSMS,
+		eNone
+	}
+
+	private CommunicationMedium mMedium;
+
+    public Person(String name, String communicationAddress){
         this.personName = name;
-        this.email = email;
+        this.communicationAddress = communicationAddress;
     }
 
 	public Person(int id, String name){
@@ -23,10 +31,10 @@ public class Person implements Serializable{
 		this.personName = name;
 	}
 	
-	public Person(int id, String name, String email){
+	public Person(int id, String name, String communicationAddress){
 		this.id = id;
 		this.personName = name;
-		this.email = email;
+		this.communicationAddress = communicationAddress;
 	}
 	
 	public void setPersonPicked(Person p){
@@ -45,12 +53,12 @@ public class Person implements Serializable{
 		return this.personName;
 	}
 
-	public void setPersonEmail(String email){
-		this.email = email;
+	public void setCommunicationAddress(String communicationAddress){
+		this.communicationAddress = communicationAddress;
 	}
 
-	public String getEmail(){
-		return this.email;
+	public String getCommunicationAddress(){
+		return this.communicationAddress;
 	}
 
 	public void setPersonID(int personID){
@@ -60,4 +68,8 @@ public class Person implements Serializable{
 	public Integer getPersonID(){
 		return this.id;
 	}
+
+	public void setPersonMedium(CommunicationMedium iMedium){ mMedium = iMedium; }
+
+	public CommunicationMedium getPersonMedium(){ return this.mMedium; }
 }
