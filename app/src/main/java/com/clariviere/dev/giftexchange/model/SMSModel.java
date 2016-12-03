@@ -9,4 +9,13 @@ public class SMSModel extends CommunicationModel {
     }
 
     protected void createMessage(){}
+    public int compareTo(String inputAddress){
+        String temp = getCommunicationTo();
+        temp = temp.replace("+","");
+        temp = temp.replace("(","");
+        temp = temp.replace(")","");
+        temp = temp.replace("-","");
+        temp = temp.replace(" ","");
+        return temp.compareTo(inputAddress);
+    }
 }
