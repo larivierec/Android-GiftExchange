@@ -35,14 +35,10 @@ public class SendSmsToUserAsyncTask extends AsyncTask<Void, Void, Void>{
 
         try{
             Intent wSentIntent = new Intent(SENT);
-            wSentIntent.putExtra("toAddress", wModel.getCommunicationTo());
-            wSentIntent.putExtra("message", wModel.getCommunicationMessage());
-
             PendingIntent wPendingSentIntent = PendingIntent.getBroadcast(
                     mActivity.getApplicationContext(), 0, wSentIntent,
                     PendingIntent.FLAG_UPDATE_CURRENT);
 
-        /* Register for SMS send action */
             mActivity.registerReceiver(new BroadcastReceiver() {
 
                 @Override
@@ -52,7 +48,6 @@ public class SendSmsToUserAsyncTask extends AsyncTask<Void, Void, Void>{
                     switch (getResultCode()) {
                         case Activity.RESULT_OK:
                             wResult = "Transmission successful";
-                            deleteSMS(context, intent, wModel);
                             break;
                         case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
                             wResult = "Transmission failed";
@@ -79,35 +74,5 @@ public class SendSmsToUserAsyncTask extends AsyncTask<Void, Void, Void>{
             Log.d("Communication address", illegalArg.getMessage());
         }
         return null;
-    }
-    private void deleteSMS(Context iContext, Intent iIntent, SMSModel smsModel){
-        String wToAddress = iIntent.getStringExtra("toAddress");
-        String wMessage = iIntent.getStringExtra("message");
-
-        try {
-            Log.d("SMS Delete","Deleting SMS from inbox");
-            Uri uriSms = Uri.parse("content://sms/sent");
-            Cursor c = iContext.getContentResolver().query(uriSms,
-                    new String[] { "_id", "thread_id", "address",
-                            "person", "date", "body" }, "body = '"+ wMessage +"'", null, null);
-
-            if (c != null && c.moveToFirst()) {
-                do {
-                    long id = c.getLong(0);
-                    long threadId = c.getLong(1);
-                    String address = c.getString(2);
-                    String body = c.getString(5);
-                    Log.d("", "SMS with id: " + threadId +" Number:- " +address);
-                    if (smsModel.compareTo(address) == 0) {
-                        Log.d("", "Deleting SMS with id: " + threadId);
-                        iContext.getContentResolver().delete(
-                                Uri.parse("content://sms/" + id), null, null);
-                    }
-                } while (c.moveToNext());
-            }
-        } catch (Exception e) {
-            Log.e("SMS Delete", "Could not delete SMS from inbox: " + e.getMessage());
-        }
-
     }
 }
