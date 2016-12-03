@@ -1,6 +1,6 @@
 package com.clariviere.dev.giftexchange.model;
 
-class PersonEvaluator {
+public class PersonEvaluator {
     private Person mPerson = null;
 
     public PersonEvaluator(Person iPerson){
@@ -19,5 +19,4 @@ class PersonEvaluator {
             mPerson.setPersonMedium(Person.CommunicationMedium.eNone);
         }
     }
-
 }
