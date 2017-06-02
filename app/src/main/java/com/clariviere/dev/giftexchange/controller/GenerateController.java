@@ -2,6 +2,7 @@ package com.clariviere.dev.giftexchange.controller;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import com.clariviere.dev.giftexchange.model.Person;
 import com.clariviere.dev.giftexchange.model.PersonMapping;
@@ -26,13 +27,12 @@ public class GenerateController implements OnClickListener{
 	}
 	@Override
 	public void onClick(View v) {
-		if(list != null || list.size() != 0){
-			int i = 0;
-            for(Person p: list){
-                p.setPersonID(i);
-                peopleToReturn.add(p);
-                i++;
-            }
+		if(list != null || !list.isEmpty()){
+			AtomicInteger i = new AtomicInteger(0);
+			list.forEach((Person p) -> {
+				p.setPersonID(i.getAndIncrement());
+				peopleToReturn.add(p);
+			});
 			finalMap = new PersonMapping(peopleToReturn);
 			finalMap.generateUniqueMaps();
 			finalMap.mapUsers();

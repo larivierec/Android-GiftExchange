@@ -1,7 +1,9 @@
 package com.clariviere.dev.giftexchange.abstract_classes;
 
 
-public abstract class CommunicationModel {
+import com.clariviere.dev.giftexchange.interfaces.ICommunicationModel;
+
+public abstract class CommunicationModel implements ICommunicationModel{
     private String mTo;
     private String mFrom;
     private String mSubject;

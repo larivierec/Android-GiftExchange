@@ -15,6 +15,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.clariviere.dev.giftexchange.abstract_classes.CommunicationModel;
+import com.clariviere.dev.giftexchange.interfaces.ICommunicationModel;
 import com.clariviere.dev.giftexchange.model.Person;
 import com.clariviere.dev.giftexchange.model.SMSModel;
 
@@ -31,7 +32,7 @@ public class SendSmsToUserAsyncTask extends AsyncTask<Void, Void, Void>{
 
     @Override
     protected Void doInBackground(Void... params) {
-        final SMSModel wModel = new SMSModel(mPerson.getCommunicationAddress(), "You picked: " + mPerson.getPersonPicked().getPersonName());
+        final ICommunicationModel wModel = new SMSModel(mPerson.getCommunicationAddress(), "You picked: " + mPerson.getPersonPicked().getPersonName());
 
         try{
             Intent wSentIntent = new Intent(SENT);

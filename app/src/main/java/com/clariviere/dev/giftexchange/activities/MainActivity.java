@@ -22,21 +22,21 @@ import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.services.gmail.Gmail;
 import com.google.api.services.gmail.GmailScopes;
 
+import android.Manifest;
 import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.View.OnFocusChangeListener;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -90,87 +90,75 @@ public class MainActivity extends Activity {
             selectAccount();
 
         peopleList = (ListView)findViewById(R.id.listOfPeople);
-        peopleListViewAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, peopleListViewData);
+        peopleListViewAdapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, peopleListViewData);
         peopleList.setAdapter(peopleListViewAdapter);
         
         final Button buttonAdd = (Button) findViewById(R.id.btnAddP);
-        buttonAdd.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				final Dialog personAddPopup = new Dialog(context);
-				personAddPopup.setContentView(R.layout.persondialog);
-				personAddPopup.setTitle("Add a person");
+        buttonAdd.setOnClickListener((View view) -> {
+            final Dialog personAddPopup = new Dialog(context);
+            personAddPopup.setContentView(R.layout.persondialog);
+            personAddPopup.setTitle("Add a person");
 
-				Button btnAddPersonBtn = (Button)personAddPopup.findViewById(R.id.dialogBtnAdd);
+            Button btnAddPersonBtn = (Button)personAddPopup.findViewById(R.id.dialogBtnAdd);
 
-				EditText personNameField = (EditText)personAddPopup.findViewById(R.id.txtPersonName);
+            EditText personNameField = (EditText)personAddPopup.findViewById(R.id.txtPersonName);
 
-				personNameField.setOnFocusChangeListener(new OnFocusChangeListener() {
-
-					@Override
-					public void onFocusChange(View v, boolean hasFocus) {
-						if (hasFocus) {
-				            personAddPopup.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
-				        }
-					}
-				});
-				
-				btnAddPersonBtn.setOnClickListener(new OnClickListener() {
-					EditText personNameField = (EditText)personAddPopup.findViewById(R.id.txtPersonName);
-                    EditText personMediumField = (EditText)personAddPopup.findViewById(R.id.txtPersonEmail);
-					@Override
-					public void onClick(View v) {
+            btnAddPersonBtn.setOnClickListener(new View.OnClickListener() {
+                EditText personNameField = (EditText)personAddPopup.findViewById(R.id.txtPersonName);
+                EditText personEmailField = (EditText)personAddPopup.findViewById(R.id.txtPersonEmail);
+                @Override
+                public void onClick(View v) {
+                    if(personNameField.getText().toString().trim().length() != 0){
                         Person p = new Person(personNameField.getText().toString(),
-                                personMediumField.getText().toString().toLowerCase());
-						if(p.getPersonName().trim().length() != 0){
-                            peopleListViewData.add(p.getPersonName());
-                            listOfPeople.add(p);
-                            peopleListViewAdapter.notifyDataSetChanged();
-                            personAddPopup.dismiss();
-						}
-					}
-				});
-				personAddPopup.show();
-			}
-		});
-        
-        
-        peopleList.setOnItemClickListener(new OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                if (listToReturn.size() != 0) {
-                    final Dialog viewPersonPopup = new Dialog(context);
-                    viewPersonPopup.setContentView(R.layout.pickedperson_dialog);
-                    viewPersonPopup.setTitle("You chose...");
-
-                    Button btnDismiss = (Button) viewPersonPopup.findViewById(R.id.btnDismiss);
-                    TextView labelForName = (TextView) viewPersonPopup.findViewById(R.id.lblPickedPerson);
-                    if (listToReturn != null) {
-                        Person p = listToReturn.get((int) id);
-                        labelForName.setText(p.getPersonPicked().getPersonName());
+                                personEmailField.getText().toString().toLowerCase());
+                        peopleListViewData.add(p.getPersonName());
+                        listOfPeople.add(p);
+                        peopleListViewAdapter.notifyDataSetChanged();
+                        personAddPopup.dismiss();
                     }
-                    btnDismiss.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            viewPersonPopup.dismiss();
-                        }
-                    });
-                    viewPersonPopup.show();
-                } else {
-                    Toast.makeText(context, "You must generate the list first", Toast.LENGTH_LONG).show();
                 }
-            }
+            });
+            personAddPopup.show();
+
+            personNameField.setOnFocusChangeListener((View vv, boolean hasFocus) -> {
+                if(hasFocus){
+                    personAddPopup.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+                }
+            });
         });
 
+        peopleList.setOnItemClickListener((AdapterView<?> parent, View v, int position, long id) ->
+        {
+            if (listToReturn.size() != 0) {
+                final Dialog viewPersonPopup = new Dialog(context);
+                viewPersonPopup.setContentView(R.layout.pickedperson_dialog);
+                viewPersonPopup.setTitle("You chose...");
 
+                Button btnDismiss = (Button) viewPersonPopup.findViewById(R.id.btnDismiss);
+                TextView labelForName = (TextView) viewPersonPopup.findViewById(R.id.lblPickedPerson);
+                if (listToReturn != null) {
+                    Person p = listToReturn.get((int) id);
+                    labelForName.setText(p.getPersonPicked().getPersonName());
+                }
+
+                btnDismiss.setOnClickListener((View localView) -> {
+                        viewPersonPopup.dismiss();
+                    }
+                );
+                viewPersonPopup.show();
+            } else {
+                Toast.makeText(context, "You must generate the list first", Toast.LENGTH_LONG).show();
+            }
+        });
 
         final Button buttonGenerate = (Button) findViewById(R.id.btnGenerateList);
         buttonGenerate.setOnClickListener(new GenerateController(this, listOfPeople, this.finalMap, this.listToReturn));
 
         final Button buttonSendMedium = (Button) findViewById(R.id.btn_sendEmail);
         buttonSendMedium.setOnClickListener(new SendingController(this, listToReturn, mService));
+
+        // temporary, to fix.
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS},1);
     }
 
     @Override
@@ -215,10 +203,9 @@ public class MainActivity extends Activity {
         	LoadStateListener load = new LoadStateListener(this.finalMap, this.listToReturn, context);
         	this.listToReturn = load.getListOfPeople();
         	this.finalMap = load.getPersonMapping();
-        	
-        	for(Person p : listToReturn){
-        		this.peopleListViewData.add(p.getPersonName());
-        	}
+
+        	listToReturn.forEach((person) -> this.peopleListViewData.add(person.getPersonName()));
+
         	peopleListViewAdapter.notifyDataSetChanged();
         }
         return super.onOptionsItemSelected(item);

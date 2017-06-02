@@ -27,18 +27,17 @@ public class SendingController implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        for(Person wPerson : mPeopleList){
-            if(wPerson.getPersonPicked().getCommunicationAddress() != null) {
-                new PersonEvaluator(wPerson);
-                if(Person.CommunicationMedium.eEmail == wPerson.getPersonMedium()){
-                    new SendEmailToUserAsyncTask(mActivity, mService, wPerson).execute();
+        mPeopleList.forEach(w_person -> {
+            if(w_person.getPersonPicked().getCommunicationAddress() != null) {
+                new PersonEvaluator(w_person);
+                if(Person.CommunicationMedium.eEmail == w_person.getPersonMedium()){
+                    new SendEmailToUserAsyncTask(mActivity, mService, w_person).execute();
                 }
-                else if(Person.CommunicationMedium.eSMS == wPerson.getPersonMedium()){
-                    new SendSmsToUserAsyncTask(mActivity, wPerson).execute();
+                else if(Person.CommunicationMedium.eSMS == w_person.getPersonMedium()){
+                    new SendSmsToUserAsyncTask(mActivity, w_person).execute();
                 }
-
             }
-        }
+        });
         Toast.makeText(mActivity, "Communications have been sent.", Toast.LENGTH_SHORT).show();
     }
 }

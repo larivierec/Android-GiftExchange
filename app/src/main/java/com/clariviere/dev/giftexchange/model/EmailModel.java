@@ -18,49 +18,12 @@ import javax.mail.internet.MimeMessage;
 
 public class EmailModel extends CommunicationModel{
 
-    private Properties mProps = new Properties();
-    private Session mSession = Session.getDefaultInstance(mProps,null);
-
-    private MimeMessage mMimeMessage;
-    private Message mGmailMessage;
-
-    public EmailModel(String to, String from, String subject, String text){
-        super(to,from,subject,text);
-        try{
-            createEmail();
-            createMessage();
-        }catch(Exception messageEx){
-            messageEx.printStackTrace();
-        }
+    public EmailModel(String to, String from, String subject, String text) {
+        super(to, from, subject, text);
     }
 
-    private void createEmail() throws MessagingException{
-        mMimeMessage = new MimeMessage(mSession);
-        mMimeMessage.setFrom(new InternetAddress(getCommunicationFrom()));
-        mMimeMessage.addRecipient(javax.mail.Message.RecipientType.TO, new InternetAddress(getCommunicationTo()));
-        mMimeMessage.setSubject(getCommunicationSubject());
-        mMimeMessage.setText(getCommunicationMessage());
-    }
+    @Override
+    protected void createMessage() {
 
-    protected void createMessage(){
-        try {
-            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-            mMimeMessage.writeTo(bytes);
-            String encodedEmail = Base64.encodeBase64URLSafeString(bytes.toByteArray());
-            Message message = new Message();
-            message.setRaw(encodedEmail);
-            mGmailMessage = message;
-        }
-        catch(MessagingException messagingEx){
-            Log.d("Messaging Exception", messagingEx.getMessage());
-        }
-        catch(IOException ioException){
-            Log.d("IOException", ioException.getMessage());
-        }
-
-    }
-
-    public Message getGmailMessage(){
-        return mGmailMessage;
     }
 }
